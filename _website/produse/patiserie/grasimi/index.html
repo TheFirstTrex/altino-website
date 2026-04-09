@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Grăsimi și margarină pentru patiserie și panificație — margarină foietaj, grăsime cofetărie, import direct ALTINO.">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/svg+xml" href="../../../assets/favicon.svg">
+  <title>Grăsimi & Margarină — Patiserie — ALTINO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../styles.css">
+</head>
+<body>
+
+  <!-- NAV (rendered by components.js) -->
+  <nav class="nav" id="site-nav"></nav>
+  <div class="scroll-progress"></div>
+
+  <!-- PAGE HEADER -->
+  <section class="page-header">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="/" data-i18n="nav_home">Acasă</a>
+        <span class="separator">/</span>
+        <a href="/produse/" data-i18n="nav_products">Produse</a>
+        <span class="separator">/</span>
+        <a href="/produse/patiserie/" data-i18n="cat_patiserie_title">Patiserie & Panificație</a>
+        <span class="separator">/</span>
+        <span data-i18n="subcat_grasimi_title">Grăsimi & Margarină</span>
+      </div>
+      <h1 data-i18n="subcat_grasimi_title">Grăsimi & Margarină</h1>
+      <p data-i18n="grasimi_intro">Margarină și grăsimi profesionale pentru patiserie, foietaj și cofetărie. Produse cu punct de topire controlat, ideale pentru laminare, coacere și creme.</p>
+    </div>
+  </section>
+
+  <div class="container" style="padding-top:32px;">
+    <img src="../../../assets/grasimi.jpg" alt="Grăsimi și margarină" loading="lazy" style="width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:8px;">
+  </div>
+
+  <!-- PRODUCTS GRID -->
+  <section class="section">
+    <div class="container">
+      <div class="products-grid">
+        <div class="product-card card">
+          <div class="img-placeholder img-placeholder--4x3"><span>Foto produs</span></div>
+          <div class="card-body">
+            <h3 data-i18n="prod_premium_marg">Premium 10KG Margarină</h3>
+            <p data-i18n="prod_premium_marg_desc">Margarină multi-scop pentru patiserie și panificație, bloc de 10 kg. Textura plastică, potrivită pentru aluat și creme.</p>
+            <a href="/contact/?produs=Premium+10KG+Margarin%C4%83" class="card-link" data-i18n="prod_cta">Cereți ofertă</a>
+          </div>
+        </div>
+        <div class="product-card card">
+          <div class="img-placeholder img-placeholder--4x3"><span>Foto produs</span></div>
+          <div class="card-body">
+            <h3 data-i18n="prod_oleina_marg">Oleina Margarină</h3>
+            <p data-i18n="prod_oleina_marg_desc">Margarină pe bază de ulei de palmier și floarea soarelui. Consistență stabilă pentru producția industrială de patiserie.</p>
+            <a href="/contact/?produs=Oleina+Margarin%C4%83" class="card-link" data-i18n="prod_cta">Cereți ofertă</a>
+          </div>
+        </div>
+        <div class="product-card card">
+          <div class="img-placeholder img-placeholder--4x3"><span>Foto produs</span></div>
+          <div class="card-body">
+            <h3 data-i18n="prod_marg_foietaj">Margarină Foietaj</h3>
+            <p data-i18n="prod_marg_foietaj_desc">Margarină cu conținut ridicat de grăsime, special formulată pentru aluatul de foietaj. Plasticitate excelentă la laminare.</p>
+            <a href="/contact/?produs=Margarin%C4%83+Foietaj" class="card-link" data-i18n="prod_cta">Cereți ofertă</a>
+          </div>
+        </div>
+        <div class="product-card card">
+          <div class="img-placeholder img-placeholder--4x3"><span>Foto produs</span></div>
+          <div class="card-body">
+            <h3 data-i18n="prod_grasime_cof">Grăsime de Cofetărie</h3>
+            <p data-i18n="prod_grasime_cof_desc">Grăsime vegetală pentru creme și glazuri de cofetărie. Punct de topire stabil, textură fină și omogenă.</p>
+            <a href="/contact/?produs=Gr%C4%83sime+de+Cofet%C4%83rie" class="card-link" data-i18n="prod_cta">Cereți ofertă</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-strip">
+    <div class="container">
+      <h2 data-i18n="cta_title">Deveniți client ALTINO</h2>
+      <p data-i18n="cta_subtitle">Completați formularul de contact și vă vom răspunde în cel mai scurt timp.</p>
+      <a href="/contact/" class="btn" data-i18n="cta_btn">Contactați-ne</a>
+    </div>
+  </section>
+
+  <!-- FOOTER (rendered by components.js) -->
+  <footer class="footer" id="site-footer"></footer>
+
+  <script src="../../../lang.js"></script>
+  <script src="../../../components.js"></script>
+  <script>initComponents();</script>
+</body>
+</html>

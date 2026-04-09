@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Produse din carne pentru HoReCa și fast-food — crenvurști de pui, cârnați proaspeți. Distribuție ALTINO.">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/svg+xml" href="../../../assets/favicon.svg">
+  <title>Produse din Carne — HoReCa — ALTINO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../styles.css">
+</head>
+<body>
+
+  <!-- NAV (rendered by components.js) -->
+  <nav class="nav" id="site-nav"></nav>
+  <div class="scroll-progress"></div>
+
+  <!-- PAGE HEADER -->
+  <section class="page-header">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="/" data-i18n="nav_home">Acasă</a>
+        <span class="separator">/</span>
+        <a href="/produse/" data-i18n="nav_products">Produse</a>
+        <span class="separator">/</span>
+        <a href="/produse/horeca/" data-i18n="cat_horeca_title">HoReCa</a>
+        <span class="separator">/</span>
+        <span data-i18n="horeca_carne_title">Produse din Carne</span>
+      </div>
+      <h1 data-i18n="horeca_carne_title">Produse din Carne</h1>
+      <p data-i18n="horeca_carne_desc">Crenvurști și preparate din carne pentru HoReCa și fast-food.</p>
+    </div>
+  </section>
+
+  <div class="container" style="padding-top:32px;">
+    <img src="../../../assets/carne.jpg" alt="Produse din carne" loading="lazy" style="width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:8px;">
+  </div>
+
+  <!-- PRODUCTS -->
+  <section class="section">
+    <div class="container">
+      <div class="products-grid">
+        <div class="product-card card">
+          <div class="img-placeholder img-placeholder--4x3"><span>Foto produs</span></div>
+          <div class="card-body">
+            <h3 data-i18n="prod_carne_crenvursti">Crenvurști de pui</h3>
+            <p data-i18n="prod_carne_crenvursti_desc">Crenvurști din carne de pui, ambalaje profesionale. Pentru fast-food și catering.</p>
+            <a href="/contact/?produs=Crenvu%C8%99ti+de+pui" class="card-link" data-i18n="prod_cta">Cereți ofertă</a>
+          </div>
+        </div>
+        <div class="product-card card">
+          <div class="img-placeholder img-placeholder--4x3"><span>Foto produs</span></div>
+          <div class="card-body">
+            <h3 data-i18n="prod_carne_carnati">Cârnați proaspeți</h3>
+            <p data-i18n="prod_carne_carnati_desc">Cârnați proaspeți pentru grătar și preparare la comandă. Livrare cu respectarea lanțului de frig.</p>
+            <a href="/contact/?produs=C%C3%A2rna%C8%9Bi+proaspe%C8%9Bi" class="card-link" data-i18n="prod_cta">Cereți ofertă</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-strip">
+    <div class="container">
+      <h2 data-i18n="cta_title">Deveniți client ALTINO</h2>
+      <p data-i18n="cta_subtitle">Completați formularul de contact și vă vom răspunde în cel mai scurt timp.</p>
+      <a href="/contact/" class="btn" data-i18n="cta_btn">Contactați-ne</a>
+    </div>
+  </section>
+
+  <!-- FOOTER (rendered by components.js) -->
+  <footer class="footer" id="site-footer"></footer>
+
+  <script src="../../../lang.js"></script>
+  <script src="../../../components.js"></script>
+  <script>initComponents();</script>
+</body>
+</html>

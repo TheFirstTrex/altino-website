@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Despre ALTINO — importator și distribuitor de produse alimentare pe piața românească din 2001. Import direct de la producători selectați din Europa și Asia.">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <title>Despre noi — ALTINO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+  <!-- NAV (rendered by components.js) -->
+  <nav class="nav" id="site-nav"></nav>
+  <div class="scroll-progress"></div>
+
+  <!-- PAGE HEADER -->
+  <section class="page-header">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="/" data-i18n="nav_home">Acasă</a>
+        <span class="separator">/</span>
+        <span data-i18n="nav_about">Despre</span>
+      </div>
+      <h1 data-i18n="about_h1">Despre ALTINO</h1>
+    </div>
+  </section>
+
+  <!-- ABOUT BANNER -->
+  <div class="container" style="padding-top:32px;">
+    <img src="../assets/about-warehouse.jpg" alt="Depozit ALTINO" loading="lazy" style="width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:8px;">
+  </div>
+
+  <!-- ABOUT CONTENT -->
+  <section class="section">
+    <div class="container about-content">
+      <p data-i18n="about_intro">ALTINO este importator și distribuitor de produse alimentare activ pe piața românească din 2001. Importăm direct de la producători selectați din Europa și Asia și distribuim în peste 34 de județe din România.</p>
+
+      <h2 data-i18n="about_what_title">Ce facem</h2>
+      <p data-i18n="about_what_text">Furnizăm ingrediente și materii prime pentru patiserie, panificație, HoReCa și industria alimentară. Gama noastră cuprinde peste 800 de produse — de la ciocolată și cuvertură, grăsimi și margarină, premixuri și făinuri, până la sosuri, conserve, uleiuri și fructe uscate. Lucrăm cu peste 600 de clienți activi: patiserii, brutării, restaurante, hoteluri, firme de catering și subdistribuitori.</p>
+
+      <h2 data-i18n="about_how_title">Cum lucrăm</h2>
+      <p data-i18n="about_how_text">Relațiile directe cu producătorii ne permit să oferim termene de plată flexibile și prețuri competitive. Comenzile se plasează prin telefon sau WhatsApp, iar livrarea se face cu flota proprie din depozitele din București și Timișoara. Fiecare client are un agent dedicat care îl vizitează periodic.</p>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="section" style="padding-top: 0;">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item reveal">
+          <span class="stat-number" data-i18n="stat_years" data-count="25" data-suffix="+">25+</span>
+          <span class="stat-label" data-i18n="stat_years_label">ani de activitate</span>
+        </div>
+        <div class="stat-item reveal">
+          <span class="stat-number" data-i18n="stat_products" data-count="800" data-suffix="+">800+</span>
+          <span class="stat-label" data-i18n="stat_products_label">produse în catalog</span>
+        </div>
+        <div class="stat-item reveal">
+          <span class="stat-number" data-i18n="stat_clients" data-count="600" data-suffix="+">600+</span>
+          <span class="stat-label" data-i18n="stat_clients_label">clienți activi</span>
+        </div>
+        <div class="stat-item reveal">
+          <span class="stat-number" data-i18n="stat_counties" data-count="34" data-suffix="">34</span>
+          <span class="stat-label" data-i18n="stat_counties_label">județe deservite</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-strip">
+    <div class="container">
+      <h2 data-i18n="cta_title">Deveniți client ALTINO</h2>
+      <p data-i18n="cta_subtitle">Completați formularul de contact și vă vom răspunde în cel mai scurt timp.</p>
+      <a href="/contact/" class="btn" data-i18n="cta_btn">Contactați-ne</a>
+    </div>
+  </section>
+
+  <!-- FOOTER (rendered by components.js) -->
+  <footer class="footer" id="site-footer"></footer>
+
+  <script src="../lang.js"></script>
+  <script src="../components.js"></script>
+  <script>
+    initComponents();
+
+    // Animated stat counters (staggered)
+    let statTriggered = false;
+    const statObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !statTriggered) {
+          statTriggered = true;
+          const allStats = document.querySelectorAll('.stat-number[data-count]');
+          allStats.forEach((el, i) => {
+            setTimeout(() => {
+              const target = parseInt(el.getAttribute('data-count'));
+              const suffix = el.getAttribute('data-suffix') || '';
+              if (isNaN(target)) return;
+              const duration = 2500;
+              const start = performance.now();
+              const step = (now) => {
+                const progress = Math.min((now - start) / duration, 1);
+                const eased = 1 - Math.pow(1 - progress, 3);
+                el.textContent = Math.floor(target * eased) + suffix;
+                if (progress < 1) requestAnimationFrame(step);
+              };
+              requestAnimationFrame(step);
+            }, i * 400);
+          });
+          statObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('.stat-number[data-count]').forEach(el => statObserver.observe(el));
+  </script>
+</body>
+</html>
