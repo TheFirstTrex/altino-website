@@ -161,10 +161,19 @@ function initSharedJS() {
   }
 }
 
+// Vercel Web Analytics (plain HTML — no npm needed)
+function initAnalytics() {
+  const script = document.createElement('script');
+  script.defer = true;
+  script.src = 'https://va.vercel-scripts.com/v1/script.debug.js';
+  document.head.appendChild(script);
+}
+
 // Main init — call this from every page
 function initComponents() {
   renderNav();
   renderFooter();
   renderFloatingButtons();
   initSharedJS();
+  initAnalytics();
 }
