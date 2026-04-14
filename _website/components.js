@@ -165,7 +165,7 @@ function initSharedJS() {
 function initAnalytics() {
   const script = document.createElement('script');
   script.defer = true;
-  script.src = 'https://va.vercel-scripts.com/v1/script.debug.js';
+  script.src = '/_vercel/insights/script.js';
   document.head.appendChild(script);
 }
 
