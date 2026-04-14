@@ -85,7 +85,7 @@ function renderFooter() {
           <ul class="footer-links">
             <li>Str. Oxigenului, Nr. 1 C</li>
             <li>Căldăraru, jud. Ilfov, 77037</li>
-            <li><a href="tel:+40XXXXXXXXX">+40 XXX XXX XXX</a></li>
+            <li><a href="tel:+40722281828">+40 722 281 828</a></li>
             <li><a href="mailto:office@altino.ro">office@altino.ro</a></li>
             <li style="font-size: 0.75rem; margin-top: 8px; opacity: 0.6;">CUI: 31050793 | J23/6216/2017</li>
           </ul>
@@ -109,7 +109,7 @@ function renderFloatingButtons() {
 
   // WhatsApp
   const wa = document.createElement('a');
-  wa.href = 'https://wa.me/40XXXXXXXXX?text=Bun%C4%83%20ziua%2C%20a%C8%99%20dori%20informa%C8%9Bii%20despre%20produsele%20ALTINO.';
+  wa.href = 'https://wa.me/40722281828?text=Bun%C4%83%20ziua%2C%20a%C8%99%20dori%20informa%C8%9Bii%20despre%20produsele%20ALTINO.';
   wa.className = 'whatsapp-float';
   wa.target = '_blank';
   wa.rel = 'noopener';
