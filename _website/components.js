@@ -163,9 +163,15 @@ function initSharedJS() {
 
 // Vercel Web Analytics (plain HTML — no npm needed)
 function initAnalytics() {
+  // Initialize the va queue for beforeSend and other configurations
+  window.va = window.va || function () {
+    (window.vaq = window.vaq || []).push(arguments);
+  };
+  
+  // Load the Vercel Analytics script from CDN
   const script = document.createElement('script');
   script.defer = true;
-  script.src = 'https://va.vercel-scripts.com/v1/script.debug.js';
+  script.src = 'https://cdn.vercel-insights.com/v1/script.js';
   document.head.appendChild(script);
 }
 
