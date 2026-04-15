@@ -84,7 +84,7 @@ function renderFooter() {
           <h4 data-i18n="footer_contact_title">Contact</h4>
           <ul class="footer-links">
             <li>Str. Oxigenului, Nr. 1 C</li>
-            <li>Căldăraru, jud. Ilfov, 77037</li>
+            <li>Căldăraru, jud. Ilfov, 077035</li>
             <li><a href="tel:+40722281828">+40 722 281 828</a></li>
             <li><a href="mailto:office@altino.ro">office@altino.ro</a></li>
             <li style="font-size: 0.75rem; margin-top: 8px; opacity: 0.6;">CUI: 31050793 | J23/6216/2017</li>
