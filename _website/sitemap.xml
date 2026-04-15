@@ -26,4 +26,8 @@
   <!-- Shared -->
   <url><loc>https://altino.ro/produse/zahar/</loc><priority>0.7</priority></url>
   <url><loc>https://altino.ro/produse/ambalaje/</loc><priority>0.7</priority></url>
+
+  <!-- Legal -->
+  <url><loc>https://altino.ro/confidentialitate/</loc><priority>0.3</priority></url>
+  <url><loc>https://altino.ro/cookies/</loc><priority>0.3</priority></url>
 </urlset>

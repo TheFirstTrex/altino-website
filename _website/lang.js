@@ -151,6 +151,16 @@ const translations = {
 
   // ---- Product card shared ----
   product_cta: { ro: 'Cereți ofertă', en: 'Request quote' },
+
+  // ---- Legal pages ----
+  privacy_breadcrumb: { ro: 'Confidențialitate', en: 'Privacy' },
+  privacy_h1:         { ro: 'Politica de Confidențialitate', en: 'Privacy Policy' },
+  privacy_intro:      { ro: 'Informații despre modul în care ALTINO INTL SRL colectează și prelucrează datele dumneavoastră cu caracter personal.', en: 'Information about how ALTINO INTL SRL collects and processes your personal data.' },
+  cookies_breadcrumb: { ro: 'Cookie-uri', en: 'Cookies' },
+  cookies_h1:         { ro: 'Politica de Cookie-uri', en: 'Cookie Policy' },
+  cookies_intro:      { ro: 'Informații despre cookie-urile și tehnologiile de stocare utilizate pe site-ul altino.ro.', en: 'Information about the cookies and storage technologies used on altino.ro.' },
+  footer_privacy:     { ro: 'Confidențialitate', en: 'Privacy' },
+  footer_cookies:     { ro: 'Cookie-uri', en: 'Cookies' },
 };
 
 // ---- Language engine ----
@@ -175,6 +185,10 @@ function applyTranslations() {
         el.textContent = translations[key][currentLang];
       }
     }
+  });
+  // Show/hide full content blocks based on language (used on legal pages)
+  document.querySelectorAll('[data-lang]').forEach(el => {
+    el.style.display = el.getAttribute('data-lang') === currentLang ? '' : 'none';
   });
 }
 

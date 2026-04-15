@@ -86,13 +86,18 @@ function renderFooter() {
             <li>Str. Oxigenului, Nr. 1 C</li>
             <li>Căldăraru, jud. Ilfov, 077035</li>
             <li><a href="tel:+40722281828">+40 722 281 828</a></li>
-            <li><a href="mailto:office@altino.ro">office@altino.ro</a></li>
+            <li><a href="mailto:constantin@altino.ro">constantin@altino.ro</a></li>
             <li style="font-size: 0.75rem; margin-top: 8px; opacity: 0.6;">CUI: 31050793 | J23/6216/2017</li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© 2025 ALTINO INTL SRL. <span data-i18n="footer_rights">Toate drepturile rezervate.</span></p>
+        <p>© 2025 ALTINO INTL SRL. <span data-i18n="footer_rights">Toate drepturile rezervate.</span>
+          <span class="footer-legal-links">
+            <a href="/confidentialitate/" data-i18n="footer_privacy">Confidențialitate</a>
+            <a href="/cookies/" data-i18n="footer_cookies">Cookie-uri</a>
+          </span>
+        </p>
       </div>
     </div>`;
 }
