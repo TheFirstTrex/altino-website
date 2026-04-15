@@ -166,12 +166,57 @@ function initSharedJS() {
   }
 }
 
-// Vercel Web Analytics (plain HTML — no npm needed)
+// Vercel Web Analytics (cookieless — no consent needed)
 function initAnalytics() {
   const script = document.createElement('script');
   script.defer = true;
   script.src = '/_vercel/insights/script.js';
   document.head.appendChild(script);
+}
+
+// GA4 Analytics (uses cookies — only load after consent)
+function initGA4() {
+  if (document.querySelector('script[src*="googletagmanager"]')) return; // already loaded
+  const s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=G-D63YQNBEDZ';
+  document.head.appendChild(s);
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-D63YQNBEDZ');
+}
+
+// Cookie consent helpers
+function getCookieConsent() {
+  return localStorage.getItem('altino_cookies');
+}
+
+function setCookieConsent(value) {
+  localStorage.setItem('altino_cookies', value);
+  if (value === 'accepted') initGA4();
+  dismissCookieBanner();
+}
+
+function dismissCookieBanner() {
+  const banner = document.getElementById('cookieBanner');
+  if (banner) banner.remove();
+}
+
+function renderCookieBanner() {
+  if (getCookieConsent()) return; // already answered
+  const banner = document.createElement('div');
+  banner.id = 'cookieBanner';
+  banner.className = 'cookie-banner';
+  banner.innerHTML = `
+    <p data-i18n="cookie_banner_text">Folosim cookie-uri pentru analize de trafic. <a href="/cookies/">Detalii</a></p>
+    <div class="cookie-banner-actions">
+      <button class="cookie-btn cookie-btn-reject" onclick="setCookieConsent('rejected')" data-i18n="cookie_reject">Refuz</button>
+      <button class="cookie-btn cookie-btn-accept" onclick="setCookieConsent('accepted')" data-i18n="cookie_accept">Accept</button>
+    </div>`;
+  document.body.appendChild(banner);
+  // Apply translations if language is not Romanian
+  if (typeof currentLang !== 'undefined' && currentLang !== 'ro') applyTranslations();
 }
 
 // Main init — call this from every page
@@ -180,5 +225,7 @@ function initComponents() {
   renderFooter();
   renderFloatingButtons();
   initSharedJS();
-  initAnalytics();
+  initAnalytics();       // Vercel — cookieless, always loads
+  if (getCookieConsent() === 'accepted') initGA4(); // GA4 — only if consented
+  renderCookieBanner();  // Show banner if no choice made yet
 }

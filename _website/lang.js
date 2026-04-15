@@ -161,6 +161,11 @@ const translations = {
   cookies_intro:      { ro: 'Informații despre cookie-urile și tehnologiile de stocare utilizate pe site-ul altino.ro.', en: 'Information about the cookies and storage technologies used on altino.ro.' },
   footer_privacy:     { ro: 'Confidențialitate', en: 'Privacy' },
   footer_cookies:     { ro: 'Cookie-uri', en: 'Cookies' },
+
+  // ---- Cookie banner ----
+  cookie_banner_text: { ro: 'Folosim cookie-uri pentru analize de trafic.', en: 'We use cookies for traffic analytics.' },
+  cookie_accept:      { ro: 'Accept', en: 'Accept' },
+  cookie_reject:      { ro: 'Refuz', en: 'Decline' },
 };
 
 // ---- Language engine ----
